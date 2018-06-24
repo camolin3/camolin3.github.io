@@ -41,7 +41,7 @@ module.exports = ".countdown {\n  background-color: var(--background-color);\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"countdown\" [ngClass]=\"{'config': !running}\" (submit)=\"start()\">\n  <section class=\"counter\" *ngIf=\"counter$ | async; let counter; else instructions\">\n    <output>{{ counter.hh[0] }}</output>\n    <output>{{ counter.hh[1] }}</output>\n    <span>:</span>\n    <output>{{ counter.mm[0] }}</output>\n    <output>{{ counter.mm[1] }}</output>\n    <span>:</span>\n    <output>{{ counter.ss[0] }}</output>\n    <output>{{ counter.ss[1] }}</output>\n  </section>\n  <ng-template #instructions>\n    <p>\n      Please select a time and press \"Start\".\n    </p>\n  </ng-template>\n  <ng-template [ngIf]=\"running\" [ngIfElse]=\"stopped\">\n    <button type=\"button\" (click)=\"pauseOrContinue()\">⏯ Pause/Continue</button>\n    <button type=\"button\" (click)=\"stop()\" *ngIf=\"running\">⏹ Stop</button>\n  </ng-template>\n  <ng-template #stopped>\n    <input pattern=\"(\\d*h\\s*)?(\\d*m\\s*)?(\\d*s\\s*)?\" [(ngModel)]=\"timeStr\" name=\"timeStr\">\n    <div>\n      <input type=\"checkbox\" (change)=\"toogleFullScreen($event.target)\" id=\"fullScreen\">\n      <label for=\"fullScreen\">Go full screen</label>\n    </div>\n    <button type=\"submit\">▶️ Start</button>\n  </ng-template>\n</form>\n"
+module.exports = "<form class=\"countdown\" [ngClass]=\"{'config': !running}\" (submit)=\"start()\">\n  <section class=\"counter\" *ngIf=\"counter$ | async; let counter; else instructions\">\n    <output>{{ counter.hh[0] }}</output>\n    <output>{{ counter.hh[1] }}</output>\n    <span>:</span>\n    <output>{{ counter.mm[0] }}</output>\n    <output>{{ counter.mm[1] }}</output>\n    <span>:</span>\n    <output>{{ counter.ss[0] }}</output>\n    <output>{{ counter.ss[1] }}</output>\n  </section>\n  <ng-template #instructions>\n    <p>\n      Please select a time and press \"Start\".\n    </p>\n  </ng-template>\n  <ng-template [ngIf]=\"running\" [ngIfElse]=\"stopped\">\n    <button type=\"button\" (click)=\"pauseOrContinue()\">⏯ Pause/Continue</button>\n    <button type=\"button\" (click)=\"stop()\" *ngIf=\"running\">⏹ Stop</button>\n  </ng-template>\n  <ng-template #stopped>\n    <input pattern=\"(\\d*h\\s*)?(\\d*m\\s*)?(\\d*s\\s*)?\" [(ngModel)]=\"timeStr\" name=\"timeStr\" placeholder=\"1h 30m 50s\">\n    <div>\n      <input type=\"checkbox\" (change)=\"toogleFullScreen($event.target)\" id=\"fullScreen\">\n      <label for=\"fullScreen\">Go full screen</label>\n    </div>\n    <button type=\"submit\">▶️ Start</button>\n  </ng-template>\n</form>\n"
 
 /***/ }),
 
@@ -75,7 +75,7 @@ var AppComponent = /** @class */ (function () {
         this.paused$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
         this.stop$ = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
         this.running = false;
-        this.timeStr = '1h 30m 50s';
+        this.timeStr = '3s';
     }
     Object.defineProperty(AppComponent.prototype, "time", {
         get: function () {
@@ -88,7 +88,7 @@ var AppComponent = /** @class */ (function () {
     });
     AppComponent.prototype.start = function () {
         var _this = this;
-        setTimeout(function () { return _this.running = true; });
+        this.running = true;
         this.paused$.next(false);
         var format = function (n) {
             var floor = Math.floor(n);
@@ -96,8 +96,10 @@ var AppComponent = /** @class */ (function () {
                 .split('');
         };
         var currentNumber = this.time;
-        var numbers$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, 1000).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (s) { return currentNumber--; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeWhile"])(function (n) { return n >= 0; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(function () { return _this.running = currentNumber >= 0; }));
-        this.counter$ = this.paused$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (paused) { return paused ? Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["never"])() : numbers$; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (s) { return ({ hh: format(s / 3600), mm: format((s % 3600) / 60), ss: format(s % 60) }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.stop$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(function () { return setTimeout(function () { return _this.running = false; }); }));
+        var numbers$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, 1000).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (s) { return currentNumber--; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeWhile"])(function (n) { return n >= 0; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(function () { if (currentNumber <= 0) {
+            _this.stop();
+        } }));
+        this.counter$ = this.paused$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])(function (paused) { return paused ? Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["never"])() : numbers$; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (s) { return ({ hh: format(s / 3600), mm: format((s % 3600) / 60), ss: format(s % 60) }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["takeUntil"])(this.stop$), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["finalize"])(function () { return _this.running = false; }));
     };
     AppComponent.prototype.stop = function () {
         this.stop$.next();

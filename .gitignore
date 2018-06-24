@@ -61,4 +61,4 @@ typings/
 .next
 
 # non-needed compiled files
-.map
+*.map
