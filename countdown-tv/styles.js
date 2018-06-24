@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n:root {\n  --background-color: #000505;\n  --color: #fefeff;\n  --counter-color: #ff0101;\n}\nhtml {\n  box-sizing: border-box;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n}\nbody {\n  margin: 0;\n}\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n:root {\n  --config-background-color: #fff;\n  --running-background-color: #000505;\n  --running-border: #222;\n  --running-color: #666;\n  --running-counter-color: #ff0101;\n  --transparent: #0000;\n}\nhtml {\n  box-sizing: border-box;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n}\nbody {\n  margin: 0;\n}\n"
 
 /***/ }),
 
