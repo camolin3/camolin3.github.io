@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border-bottom: 1px solid #e0e0e0;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: var(--pad) 1fr;\n      grid-template-columns: var(--pad) 1fr;\n  height: var(--pad);\n  position: fixed;\n  width: 100vw;\n  z-index: 10;\n}\nheader > span {\n  color: var(--active-color);\n  font-size: 3rem;\n  height: var(--pad);\n  padding-left: 1rem;\n  padding-top: 0.3rem;\n  width: var(--pad);\n}\nheader > input {\n  border: 1px transparent solid;\n  font-size: 1.125rem;\n  margin: 0.7rem 0.4rem;\n  max-height: 1.5rem;\n  max-width: calc(50vw - var(--pad));\n  outline-color: transparent;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\nheader > input:hover {\n  border-color: #e5e5e5;\n}\nheader > input:focus {\n  border-color: var(--active-color);\n}\nheader > input::-webkit-input-placeholder {\n  font-style: italic;\n}\nheader > input:-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::placeholder {\n  font-style: italic;\n}\ndiv {\n  background-color: var(--workspace-color);\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 5vw (45vw)[2] 5vw;\n      grid-template-columns: 5vw repeat(2, 45vw) 5vw;\n  height: 100vh;\n  overflow-x: hidden;\n  padding-top: 4rem;\n  width: 100%;\n}\ndiv::ng-deep .firepad {\n  margin-top: 1rem;\n  box-shadow: -1.5pt 0 0 0.75pt #d1d1d1, -1.5pt 0 3pt 0.75pt #ccc;\n  -ms-grid-column: 2;\n  grid-column: 2;\n  height: unset;\n}\ndiv::ng-deep .firepad .ace_editor {\n  height: 100%;\n}\noutput {\n  margin-top: 1rem;\n  background-color: #ededed;\n  box-shadow: 1.5pt 0 0 0.75pt #d1d1d1, 1.5pt 0 3pt 0.75pt #ccc;\n  font-family: Arial, Helvetica, sans-serif;\n  -ms-grid-column: 3;\n  grid-column: 3;\n  padding: 0 1.25rem;\n}\noutput::ng-deep a {\n  color: darkblue;\n}\n"
+module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border-bottom: 1px solid #e0e0e0;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-rows: 2rem 2rem;\n  -ms-grid-columns: 4rem minmax(-webkit-min-content, 40%) 1fr;\n  -ms-grid-columns: 4rem minmax(min-content, 40%) 1fr;\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem minmax(-webkit-min-content, 40%) 1fr;\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem minmax(min-content, 40%) 1fr;\n  height: var(--pad);\n  position: fixed;\n  width: 100vw;\n  z-index: 10;\n}\nheader:not(.is-loaded) {\n  pointer-events: none;\n}\nheader > span {\n  color: var(--active-color);\n  font-size: 3rem;\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 1;\n  grid-area: logo;\n  height: var(--pad);\n  padding: 0.3rem 0 0 1rem;\n  width: var(--pad);\n}\nheader > input {\n  border: 1px transparent solid;\n  font-size: 1.125rem;\n  -ms-grid-row: 1;\n  -ms-grid-column: 2;\n  grid-area: title;\n  margin: 0.7rem 0.4rem 0 0;\n  max-height: 1.5rem;\n  outline-color: transparent;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\nheader > input:hover {\n  border-color: #e5e5e5;\n}\nheader > input:focus {\n  border-color: var(--active-color);\n}\nheader > input::-webkit-input-placeholder {\n  font-style: italic;\n}\nheader > input:-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::placeholder {\n  font-style: italic;\n}\nheader > p:nth-of-type(1) {\n  color: #777;\n  font-size: 0.8rem;\n  -ms-grid-row: 2;\n  -ms-grid-column: 2;\n  grid-area: timestamp;\n  margin: 0;\n  text-decoration: underline;\n}\nheader > p:nth-of-type(2) {\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 3;\n  grid-area: users;\n  padding-right: 1.5rem;\n  text-align: end;\n}\nheader > p:nth-of-type(2) span {\n  background-color: grey;\n  border-radius: 50%;\n  display: inline-flex;\n  height: 2rem;\n  width: 2rem;\n}\nheader > p:nth-of-type(2) span::ng-deep .emoji {\n  -webkit-filter: brightness(0) invert(1);\n          filter: brightness(0) invert(1);\n  left: calc(50% - .5em);\n  top: calc(50% - .5em);\n}\ndiv {\n  background-color: var(--workspace-color);\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 5vw (45vw)[2] 5vw;\n      grid-template-columns: 5vw repeat(2, 45vw) 5vw;\n  height: 100vh;\n  overflow-x: hidden;\n  padding-top: 4rem;\n  width: 100%;\n}\nheader:not(.is-loaded) ~ div {\n  pointer-events: none;\n}\nheader:not(.is-loaded) ~ div::after {\n  background-color: gray;\n  background-size: 4rem;\n  content: '';\n  height: 4rem;\n  left: calc(50% - 2rem);\n  -webkit-mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n          mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n  position: absolute;\n  top: 8rem;\n  width: 4rem;\n}\ndiv::ng-deep .firepad {\n  margin-top: 1rem;\n  box-shadow: -1.5pt 0 0 0.75pt #d1d1d1, -1.5pt 0 3pt 0.75pt #ccc;\n  -ms-grid-column: 2;\n  grid-column: 2;\n  height: unset;\n}\ndiv::ng-deep .firepad .ace_editor {\n  height: 100%;\n}\ndiv::ng-deep .firepad .ace_content {\n  height: 100% important!;\n}\noutput {\n  margin-top: 1rem;\n  background-color: white;\n  border-left: var(--active-color) 1pt solid;\n  box-shadow: 1.5pt 0 0 0.75pt #d1d1d1, 1.5pt 0 3pt 0.75pt #ccc;\n  font-family: Arial, Helvetica, sans-serif;\n  -ms-grid-column: 3;\n  grid-column: 3;\n  padding: 0 1.25rem;\n}\noutput::ng-deep a {\n  color: darkblue;\n}\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <span class=\"ion ion-logo-markdown\"></span>\n  <input [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n</header>\n<div>\n  <main\n    ace-editor\n    [mode]=\"'markdown'\"\n    [theme]=\"'eclipse'\"\n    [options]=\"options\"\n    ></main>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
+module.exports = "<header [class.is-loaded]=\"loaded\">\n  <span class=\"ion ion-logo-markdown\"></span>\n  <input [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n  <p title=\"All changes are saved on Firebase\">{{lastModifiedAgo}}</p>\n  <p>\n    <span *ngFor=\"let user of users\" [style.background-color]=\"user.color\" [innerHTML]=\"user.alias\" [title]=\"user.name\"></span>\n  </p>\n</header>\n<div>\n  <main\n    ace-editor\n    [mode]=\"'markdown'\"\n    [theme]=\"'eclipse'\"\n    [options]=\"options\"\n    ></main>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
 
 /***/ }),
 
@@ -69,17 +69,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/lib/index.js");
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
-/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! markdown-it-emoji */ "./node_modules/markdown-it-emoji/index.js");
-/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var ng2_ace_editor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ng2-ace-editor */ "./node_modules/ng2-ace-editor/index.js");
-/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ts-dedent */ "./node_modules/ts-dedent/dist/index.js");
-/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(ts_dedent__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! twemoji */ "./node_modules/twemoji/2/twemoji.npm.js");
-/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(twemoji__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../libs/firepad/dist/firepad */ "./src/libs/firepad/dist/firepad.js");
-/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! javascript-time-ago */ "./node_modules/javascript-time-ago/index.js");
+/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! javascript-time-ago/locale/en */ "./node_modules/javascript-time-ago/locale/en/index.js");
+/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! markdown-it-emoji */ "./node_modules/markdown-it-emoji/index.js");
+/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng2-ace-editor */ "./node_modules/ng2-ace-editor/index.js");
+/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ts-dedent */ "./node_modules/ts-dedent/dist/index.js");
+/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ts_dedent__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! twemoji */ "./node_modules/twemoji/2/twemoji.npm.js");
+/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(twemoji__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../libs/firepad/dist/firepad */ "./src/libs/firepad/dist/firepad.js");
+/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__);
 var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -107,15 +110,51 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__["default"].locale(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9___default.a);
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.colors = {
+            Navy: '#001f3f',
+            Blue: '#0074D9',
+            Aqua: '#7FDBFF',
+            Teal: '#39CCCC',
+            Olive: '#3D9970',
+            Green: '#2ECC40',
+            Lime: '#01FF70',
+            Yellow: '#FFDC00',
+            Orange: '#FF851B',
+            Red: '#FF4136',
+            Maroon: '#85144b',
+            Fuchsia: '#F012BE',
+            Purple: '#B10DC9',
+            Black: '#111111',
+            Gray: '#AAAAAA',
+            Silver: '#DDDDDD',
+        };
+        this.emojis = {
+            '🐒': 'Monkey',
+            '🐤': 'Chicken',
+            '🦆': 'Duck',
+            '🦉': 'Owl',
+            '🦇': 'Bat',
+            '🦄': 'Unicorn',
+            '🦋': 'Butterfly',
+            '🐙': 'Octopus',
+            '🕷': 'Spider',
+            '🐳': 'Whale',
+            '🐀': 'Rat',
+            '🦎': 'Lizard',
+        };
+        this.loaded = false;
         this.title = '';
         this.options = {
             indentedSoftWrap: true,
             printMargin: false,
             wrapBehavioursEnabled: true,
         };
-        this.md = (new markdown_it__WEBPACK_IMPORTED_MODULE_8__({
+        this.md = (new markdown_it__WEBPACK_IMPORTED_MODULE_10__({
             breaks: true,
             highlight: function (str, lng) {
                 if (!lng || !highlight_js__WEBPACK_IMPORTED_MODULE_7___default.a.getLanguage(lng)) {
@@ -127,16 +166,25 @@ var AppComponent = /** @class */ (function () {
                 catch (e) { }
             },
         }));
-        this.md.use(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_9__);
-        this.md.renderer.rules.emoji = function (token, idx) { return twemoji__WEBPACK_IMPORTED_MODULE_12__["parse"](token[idx].content); };
+        this.md.use(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__);
+        var emojiToImage = function (token, idx) { return twemoji__WEBPACK_IMPORTED_MODULE_14__["parse"](token[idx].content); };
+        this.md.renderer.rules.emoji = emojiToImage;
+        this.timeAgo = new javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__["default"]();
     }
+    Object.defineProperty(AppComponent.prototype, "lastModifiedAgo", {
+        get: function () {
+            return this.lastModified ?
+                "Last edit was " + this.timeAgo.format(this.lastModified) : '';
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        var defaultText = ts_dedent__WEBPACK_IMPORTED_MODULE_11___default()(templateObject_1 || (templateObject_1 = __makeTemplateObject(["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "], ["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "])));
+        var defaultText = ts_dedent__WEBPACK_IMPORTED_MODULE_13___default()(templateObject_1 || (templateObject_1 = __makeTemplateObject(["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "], ["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "])));
         var editor = this.ace.editor;
         var session = editor.getSession();
         session.setUseWrapMode(true);
-        session.setUseWorker(false);
         editor.renderer.setShowGutter(false);
         editor.renderer.setPadding(20);
         editor.renderer.setScrollMargin(20, 10);
@@ -147,17 +195,57 @@ var AppComponent = /** @class */ (function () {
         };
         firebase_app__WEBPACK_IMPORTED_MODULE_5__["initializeApp"](config);
         this.ref = this.getRef();
-        var firepad = _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_13__["fromACE"](this.ref, editor, {
+        this.firepad = _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__["fromACE"](this.ref, editor, {
             defaultText: defaultText,
         });
-        var onSync = function () { return _this.resultString = _this.md.render(firepad.getText()); };
-        firepad.on('ready', function () { return onSync() && editor.resize(true); });
-        firepad.on('synced', onSync);
+        var onSync = function () { return _this.resultString = _this.md.render(_this.firepad.getText()); };
+        this.firepad.on('synced', onSync);
+        this.firepad.on('ready', function () {
+            _this.loaded = true;
+            onSync();
+            editor.resize(true);
+        });
         this.ref.child('metadata').once('value')
             .then(function (snapshot) { return snapshot.val(); })
             .then(function (_a) {
             var title = _a.title;
             return _this.title = title;
+        });
+        this.ref.child('history')
+            .orderByChild('t')
+            .limitToLast(1)
+            .on('child_added', function (snapshot) {
+            var timestamp = snapshot.val().t;
+            _this.lastModified = new Date(timestamp);
+        });
+        this.ref.child('users')
+            .on('value', function (snapshot) {
+            var users = snapshot.val();
+            var objToNumber = function (obj) { return JSON.stringify(obj)
+                .split('')
+                .reduce(function (acc, c) { return acc + c.charCodeAt(0); }, 0); };
+            var colorList = Object.keys(_this.colors);
+            var colorNameFromObject = function (color) {
+                var number = objToNumber(color) % colorList.length;
+                return colorList[number];
+            };
+            var emojiList = Object.keys(_this.emojis);
+            var emojiFromColor = function (color, offset) {
+                if (offset === void 0) { offset = 0; }
+                var number = (objToNumber(color) + offset) % emojiList.length;
+                return emojiList[number];
+            };
+            var imageFromEmoji = function (someEmoji) { return twemoji__WEBPACK_IMPORTED_MODULE_14__["parse"](someEmoji); };
+            _this.users = Object.values(users)
+                .map(function (user, i) {
+                var newColor = colorNameFromObject(user);
+                var someEmoji = emojiFromColor(newColor, i);
+                return {
+                    color: _this.colors[newColor],
+                    alias: imageFromEmoji(someEmoji),
+                    name: newColor + ' ' + _this.emojis[someEmoji],
+                };
+            });
         });
     };
     AppComponent.prototype.onInputClicked = function (_a) {
@@ -166,7 +254,8 @@ var AppComponent = /** @class */ (function () {
         if (this.title) {
             return;
         }
-        this.title = this.resultString.split('\n', 1)[0].match(/<\w+>(.*)<\/\w+>/)[1] || 'Untitled document';
+        var firstLine = this.resultString.split('\n', 1)[0].match(/>(.*)</)[1];
+        this.title = firstLine || 'Untitled document';
         setTimeout(function () { return target.setSelectionRange(0, _this.title.length); });
     };
     AppComponent.prototype.onInputBlur = function () {
@@ -187,8 +276,8 @@ var AppComponent = /** @class */ (function () {
         return ref;
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_ace_editor__WEBPACK_IMPORTED_MODULE_10__["AceEditorDirective"]),
-        __metadata("design:type", ng2_ace_editor__WEBPACK_IMPORTED_MODULE_10__["AceEditorDirective"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__["AceEditorDirective"]),
+        __metadata("design:type", ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__["AceEditorDirective"])
     ], AppComponent.prototype, "ace", void 0);
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
