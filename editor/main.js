@@ -41,7 +41,7 @@ module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header [class.is-loaded]=\"loaded\">\n  <span class=\"ion ion-logo-markdown\"></span>\n  <input [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n  <p title=\"All changes are saved on Firebase\">{{lastModifiedAgo}}</p>\n  <p>\n    <span *ngFor=\"let user of users\" [style.background-color]=\"user.color\" [innerHTML]=\"user.alias\" [title]=\"user.name\"></span>\n  </p>\n</header>\n<div>\n  <main\n    ace-editor\n    [mode]=\"'markdown'\"\n    [theme]=\"'eclipse'\"\n    [options]=\"options\"\n    ></main>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
+module.exports = "<header [class.is-loaded]=\"loaded\">\n  <span class=\"ion ion-logo-markdown\"></span>\n  <input [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n  <p title=\"All changes are saved on Firebase\">{{lastModifiedAgo}}</p>\n  <p>\n    <span *ngFor=\"let user of users; trackBy:user?.userId\" [style.background-color]=\"user.color\" [innerHTML]=\"user.alias\" [title]=\"user.name\"></span>\n  </p>\n</header>\n<div>\n  <main\n    ace-editor\n    [mode]=\"'markdown'\"\n    [theme]=\"'eclipse'\"\n    [options]=\"options\"\n    ></main>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
 
 /***/ }),
 
@@ -236,11 +236,13 @@ var AppComponent = /** @class */ (function () {
                 return emojiList[number];
             };
             var imageFromEmoji = function (someEmoji) { return twemoji__WEBPACK_IMPORTED_MODULE_14__["parse"](someEmoji); };
-            _this.users = Object.values(users)
-                .map(function (user, i) {
-                var newColor = colorNameFromObject(user);
+            _this.users = Object.entries(users)
+                .map(function (_a, i) {
+                var userId = _a[0];
+                var newColor = colorNameFromObject(userId);
                 var someEmoji = emojiFromColor(newColor, i);
                 return {
+                    userId: userId,
                     color: _this.colors[newColor],
                     alias: imageFromEmoji(someEmoji),
                     name: newColor + ' ' + _this.emojis[someEmoji],

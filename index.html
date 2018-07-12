@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>:)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+html {
+  box-sizing: border-box;
+  font-family: arial,sans-serif;
+  font-weight: normal;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #85144B;
+  color: #FF851B;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template:
+    "title title" 1fr
+    "me projects" 1fr / 1fr 1fr;
+  height: 100vh;
+  margin: 0;
+}
+h1 {
+  align-self: end;
+  font-size: 10vmin;
+  font-variant: small-caps;
+  grid-area: title;
+  text-align: center;
+}
+p {
+  font-style: italic;
+  grid-area: me;
+  line-height: 1.61rem;
+  padding-left: 20vw;
+  text-align: right;
+}
+ul {
+  list-style-type: none;
+  grid-area: projects;
+  line-height: 1.61rem;
+  padding: 1.61rem 1rem 0 0;
+}
+a {
+  color: #fff;
+  text-decoration-line: dashed;
+}
+    </style>
   </head>
   <body>
     <h1>
-      Hello world 😄
+      Hello World 😄
     </h1>
+    <p>
+      My name is <strong>Carlos Molina</strong>.<br>
+      I work as a frontend developer, love web technologies <br>and playing with my cat.
+    </p>
     <ul>
       <li>
         <a href="./countdown-tv">The Final Countdown ⏲</a>
+      </li>
+      <li>
         <a href="./editor">Markdown Editor 🖊</a>
       </li>
     </ul>
