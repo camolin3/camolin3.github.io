@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>:)</title>
+    <title>&lt;hello-world&gt; – Carlos Molina</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu|Roboto+Condensed" rel="stylesheet">
     <style>
 html {
   box-sizing: border-box;
@@ -17,54 +18,114 @@ body {
   background-color: #85144B;
   color: #FF851B;
   display: grid;
+  font-family: 'Roboto Condensed', sans-serif;
   grid-gap: 1rem;
   grid-template:
     "title title" 1fr
-    "me projects" 1fr / 1fr 1fr;
+    "me projects" 1fr
+    "links links" 0.7fr / 1fr 1fr;
   height: 100vh;
   margin: 0;
 }
 h1 {
   align-self: end;
+  font-family: 'Gaegu', cursive;
   font-size: 10vmin;
-  font-variant: small-caps;
   grid-area: title;
   text-align: center;
 }
 p {
-  font-style: italic;
   grid-area: me;
   line-height: 1.61rem;
   padding-left: 20vw;
   text-align: right;
 }
 ul {
-  list-style-type: none;
   grid-area: projects;
   line-height: 1.61rem;
+  list-style-type: none;
   padding: 1.61rem 1rem 0 0;
 }
 a {
   color: #fff;
-  text-decoration-line: dashed;
+  text-decoration-style: dashed;
+  position: relative;
+}
+a ion-icon {
+  font-size: 1.4em;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  position: absolute;
+}
+footer {
+  grid-area: links;
+  text-align: center;
+}
+footer span {
+  display: block;
+  color: #01FF70;
+  padding-bottom: 1rem;
+}
+footer a ion-icon {
+  font-size: 1.6rem;
+  position: relative;
+  padding: 0 .7rem;
+  top: .45rem;
+}
+@media (max-width: 375px) {
+  body {
+    font-size: .9rem;
+  }
+  p {
+    padding-left: 10vw;
+  }
+  footer span {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  footer code {
+    font-size: .7em;
+  }
+  footer a ion-icon {
+    font-size: 2.3rem;
+    padding: 0 .3rem;
+    top: .9rem;
+  }
 }
     </style>
   </head>
   <body>
     <h1>
-      Hello World 😄
+      &lt;hello-world&gt;
     </h1>
     <p>
       My name is <strong>Carlos Molina</strong>.<br>
-      I work as a frontend developer, love web technologies <br>and playing with my cat.
+      I work as a frontend developer, love web technologies <br>reading books and playing with my cat.
     </p>
     <ul>
       <li>
-        <a href="./countdown-tv">The Final Countdown ⏲</a>
+        <a href="./countdown-tv">
+          The Final Countdown
+          <ion-icon name="timer"></ion-icon>
+        </a>
       </li>
       <li>
-        <a href="./editor">Markdown Editor 🖊</a>
+        <a href="./editor">
+          Markdown Editor
+          <ion-icon name="logo-markdown"></ion-icon>
+        </a>
       </li>
     </ul>
+    <footer>
+      <span>#angular #typescript #jasmine #selenium #node #npm</span>
+      <code>
+        const {
+          <a href="https://www.linkedin.com/in/carlos-molina-avenda%C3%B1o-060293145" target="_blank" title="Linkedin"><ion-icon name="logo-linkedin"></ion-icon></a> ,
+          <a href="https://github.com/camolin3" target="_blank" title="GitHub"><ion-icon name="logo-github"></ion-icon></a> ,
+          <a href="https://stackoverflow.com/users/1419402/camolin3" target="_blank" title="Stack Overflow"><ion-icon name="help-buoy"></ion-icon></a>
+        } = contact;
+      </code>
+    </footer>
+    <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
   </body>
 </html>
