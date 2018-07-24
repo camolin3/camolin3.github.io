@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border-bottom: 1px solid #e0e0e0;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-rows: 2rem 2rem;\n  -ms-grid-columns: 4rem minmax(-webkit-min-content, 40%) 1fr;\n  -ms-grid-columns: 4rem minmax(min-content, 40%) 1fr;\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem minmax(-webkit-min-content, 40%) 1fr;\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem minmax(min-content, 40%) 1fr;\n  height: var(--pad);\n  position: fixed;\n  width: 100vw;\n  z-index: 10;\n}\nheader:not(.is-loaded) {\n  pointer-events: none;\n}\nheader > span {\n  color: var(--active-color);\n  font-size: 3rem;\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 1;\n  grid-area: logo;\n  height: var(--pad);\n  padding: 0.3rem 0 0 1rem;\n  width: var(--pad);\n}\nheader > input {\n  border: 1px transparent solid;\n  font-size: 1.125rem;\n  -ms-grid-row: 1;\n  -ms-grid-column: 2;\n  grid-area: title;\n  margin: 0.7rem 0.4rem 0 0;\n  max-height: 1.5rem;\n  outline-color: transparent;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\nheader > input:hover {\n  border-color: #e5e5e5;\n}\nheader > input:focus {\n  border-color: var(--active-color);\n}\nheader > input::-webkit-input-placeholder {\n  font-style: italic;\n}\nheader > input:-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::-ms-input-placeholder {\n  font-style: italic;\n}\nheader > input::placeholder {\n  font-style: italic;\n}\nheader > p:nth-of-type(1) {\n  color: #777;\n  font-size: 0.8rem;\n  -ms-grid-row: 2;\n  -ms-grid-column: 2;\n  grid-area: timestamp;\n  margin: 0;\n  text-decoration: underline;\n}\nheader > p:nth-of-type(2) {\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 3;\n  grid-area: users;\n  padding-right: 1.5rem;\n  text-align: end;\n}\nheader > p:nth-of-type(2) span {\n  background-color: grey;\n  border-radius: 50%;\n  display: inline-flex;\n  height: 2rem;\n  width: 2rem;\n}\nheader > p:nth-of-type(2) span::ng-deep .emoji {\n  -webkit-filter: brightness(0) invert(1);\n          filter: brightness(0) invert(1);\n  left: calc(50% - .5em);\n  top: calc(50% - .5em);\n}\ndiv {\n  background-color: var(--workspace-color);\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 5vw (45vw)[2] 5vw;\n      grid-template-columns: 5vw repeat(2, 45vw) 5vw;\n  height: 100vh;\n  overflow-x: hidden;\n  padding-top: 4rem;\n  width: 100%;\n}\nheader:not(.is-loaded) ~ div {\n  pointer-events: none;\n}\nheader:not(.is-loaded) ~ div::after {\n  background-color: gray;\n  background-size: 4rem;\n  content: '';\n  height: 4rem;\n  left: calc(50% - 2rem);\n  -webkit-mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n          mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n  position: absolute;\n  top: 8rem;\n  width: 4rem;\n}\ndiv::ng-deep .firepad {\n  margin-top: 1rem;\n  box-shadow: -1.5pt 0 0 0.75pt #d1d1d1, -1.5pt 0 3pt 0.75pt #ccc;\n  -ms-grid-column: 2;\n  grid-column: 2;\n  height: unset;\n}\ndiv::ng-deep .firepad .ace_editor {\n  height: 100%;\n}\ndiv::ng-deep .firepad .ace_content {\n  height: 100% important!;\n}\noutput {\n  margin-top: 1rem;\n  background-color: white;\n  border-left: var(--active-color) 1pt solid;\n  box-shadow: 1.5pt 0 0 0.75pt #d1d1d1, 1.5pt 0 3pt 0.75pt #ccc;\n  font-family: Arial, Helvetica, sans-serif;\n  -ms-grid-column: 3;\n  grid-column: 3;\n  padding: 0 1.25rem;\n}\noutput::ng-deep a {\n  color: darkblue;\n}\n"
+module.exports = ":host > header {\n  --pad: 4rem;\n  background-color: white;\n  border-bottom: 1px solid #e0e0e0;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-rows: 2rem 2rem;\n  -ms-grid-columns: 4rem 1fr minmax(-webkit-min-content, 11rem);\n  -ms-grid-columns: 4rem 1fr minmax(min-content, 11rem);\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem 1fr minmax(-webkit-min-content, 11rem);\n      grid-template:\n    \"logo title     users\" 2rem\n    \"logo timestamp users\" 2rem / 4rem 1fr minmax(min-content, 11rem);\n  height: var(--pad);\n  position: fixed;\n  width: 100vw;\n  z-index: 10;\n}\n:host > header:not(.is-loaded) {\n  pointer-events: none;\n}\n:host > header > .logo {\n  --size: 3rem;\n  color: var(--active-color);\n  font-size: var(--size);\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 1;\n  grid-area: logo;\n  height: var(--size);\n  padding: 0.3rem 0 0 1rem;\n  width: var(--size);\n}\n:host > header > .title {\n  border: 1px transparent solid;\n  font-size: 1.125rem;\n  -ms-grid-row: 1;\n  -ms-grid-column: 2;\n  grid-area: title;\n  margin: 0.7rem 0.4rem 0 0;\n  max-height: 1.5rem;\n  outline-color: transparent;\n  overflow: hidden;\n  padding-left: .3rem;\n  text-overflow: ellipsis;\n}\n:host > header > .title:hover {\n  border-color: #e5e5e5;\n}\n:host > header > .title:focus {\n  border-color: var(--active-color);\n}\n:host > header > .title::-webkit-input-placeholder {\n  font-style: italic;\n}\n:host > header > .title:-ms-input-placeholder {\n  font-style: italic;\n}\n:host > header > .title::-ms-input-placeholder {\n  font-style: italic;\n}\n:host > header > .title::placeholder {\n  font-style: italic;\n}\n:host > header > .menu {\n  align-items: baseline;\n  display: flex;\n  font-size: 0.8rem;\n  -ms-grid-row: 2;\n  -ms-grid-column: 2;\n  grid-area: timestamp;\n}\n:host > header > .menu p {\n  color: #777;\n  margin: 0 1rem;\n  text-decoration: underline;\n}\n:host > header > .connected-users {\n  -ms-grid-row-align: center;\n      align-self: center;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-row: 1;\n  -ms-grid-row-span: 2;\n  -ms-grid-column: 3;\n  grid-area: users;\n  -ms-grid-columns: 1fr (1rem)[11];\n      grid-template-columns: 1fr repeat(11, 1rem);\n  padding-right: 1.5rem;\n}\n:host > header > .connected-users span {\n  background-color: grey;\n  border-radius: 50%;\n  height: 2rem;\n  width: 2rem;\n}\n:host > header > .connected-users span:nth-child(-n+11) {\n  display: none;\n}\n:host > header > .connected-users span:nth-last-child(1) {\n  display: block;\n  -ms-grid-column: 11;\n  -ms-grid-column-span: 1;\n  grid-column: 11 / 12;\n  z-index: 11;\n}\n:host > header > .connected-users span:nth-last-child(2) {\n  display: block;\n  -ms-grid-column: 10;\n  -ms-grid-column-span: 1;\n  grid-column: 10 / 11;\n  z-index: 10;\n}\n:host > header > .connected-users span:nth-last-child(3) {\n  display: block;\n  -ms-grid-column: 9;\n  -ms-grid-column-span: 1;\n  grid-column: 9 / 10;\n  z-index: 9;\n}\n:host > header > .connected-users span:nth-last-child(4) {\n  display: block;\n  -ms-grid-column: 8;\n  -ms-grid-column-span: 1;\n  grid-column: 8 / 9;\n  z-index: 8;\n}\n:host > header > .connected-users span:nth-last-child(5) {\n  display: block;\n  -ms-grid-column: 7;\n  -ms-grid-column-span: 1;\n  grid-column: 7 / 8;\n  z-index: 7;\n}\n:host > header > .connected-users span:nth-last-child(6) {\n  display: block;\n  -ms-grid-column: 6;\n  -ms-grid-column-span: 1;\n  grid-column: 6 / 7;\n  z-index: 6;\n}\n:host > header > .connected-users span:nth-last-child(7) {\n  display: block;\n  -ms-grid-column: 5;\n  -ms-grid-column-span: 1;\n  grid-column: 5 / 6;\n  z-index: 5;\n}\n:host > header > .connected-users span:nth-last-child(8) {\n  display: block;\n  -ms-grid-column: 4;\n  -ms-grid-column-span: 1;\n  grid-column: 4 / 5;\n  z-index: 4;\n}\n:host > header > .connected-users span:nth-last-child(9) {\n  display: block;\n  -ms-grid-column: 3;\n  -ms-grid-column-span: 1;\n  grid-column: 3 / 4;\n  z-index: 3;\n}\n:host > header > .connected-users span:nth-last-child(10) {\n  display: block;\n  -ms-grid-column: 2;\n  -ms-grid-column-span: 1;\n  grid-column: 2 / 3;\n  position: relative;\n  z-index: 2;\n}\n:host > header > .connected-users span:nth-last-child(10)::after {\n  color: gray;\n  content: '+10';\n  font-size: 0.9rem;\n  position: absolute;\n  right: 120%;\n  top: 20%;\n}\n:host > header > .connected-users span::ng-deep .emoji {\n  -webkit-filter: brightness(0) invert(1);\n          filter: brightness(0) invert(1);\n  left: calc(50% - .5em);\n  top: calc(50% - .5em);\n}\n.workplace {\n  background-color: var(--workspace-color);\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 5vw (45vw)[2] 5vw;\n      grid-template-columns: 5vw repeat(2, 45vw) 5vw;\n  height: 100vh;\n  overflow-x: hidden;\n  padding-top: 4rem;\n  width: 100%;\n}\nheader:not(.is-loaded) ~ .workplace {\n  pointer-events: none;\n}\nheader:not(.is-loaded) ~ .workplace::after {\n  background-color: #cccc;\n  background-size: 4rem;\n  content: '';\n  height: 4rem;\n  left: calc(50% - 2rem);\n  -webkit-mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n          mask: url('/editor/assets/loading-bubbles.svg') no-repeat 50% 50%/100% 100%;\n  position: absolute;\n  top: 8rem;\n  width: 4rem;\n}\n.workplace > codemirror {\n  margin-top: 1rem;\n  box-shadow: -1.5pt 0 0 0.75pt #d1d1d1, -1.5pt 0 3pt 0.75pt #ccc;\n  -ms-grid-column: 2;\n  grid-column: 2;\n  height: unset;\n}\n.workplace > output {\n  --lineColor: #aaa;\n  margin-top: 1rem;\n  background-color: white;\n  border-left: var(--active-color) 1pt solid;\n  box-shadow: 1.5pt 0 0 0.75pt #d1d1d1, 1.5pt 0 3pt 0.75pt #ccc;\n  font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";\n  -ms-grid-column: 3;\n  grid-column: 3;\n  padding: 0 1.25rem;\n}\n.workplace > output::ng-deep h1,\n.workplace > output::ng-deep h2 {\n  border-bottom: var(--lineColor) 1px solid;\n}\n.workplace > output::ng-deep a {\n  color: #0366d6;\n}\n.workplace > output::ng-deep code {\n  background-color: #eaeaea;\n  border-radius: .1rem;\n  display: block;\n  padding: 1rem;\n}\n.workplace > output::ng-deep blockquote {\n  border: var(--lineColor) 1pt solid;\n  border-radius: .5rem;\n  display: block;\n  margin: 0;\n  padding: .2rem 1rem .2rem 3rem;\n  position: relative;\n}\n.workplace > output::ng-deep blockquote::before {\n  color: var(--lineColor);\n  content: '“';\n  font-family: serif;\n  font-size: 4rem;\n  left: .7rem;\n  position: absolute;\n}\n@media (max-width: 600px) {\n  :host > header > .menu > app-menu {\n    display: none;\n  }\n  :host > header {\n    -ms-grid-columns: 4rem 1fr minmax(min-content, 5.5rem);\n        grid-template-columns: 4rem 1fr minmax(-webkit-min-content, 5.5rem);\n        grid-template-columns: 4rem 1fr minmax(min-content, 5.5rem);\n  }\n  :host > header > .connected-users {\n    -ms-grid-columns: 1fr (.5rem)[11];\n        grid-template-columns: 1fr repeat(11, .5rem);\n  }\n  :host > header > .menu > p {\n    margin: 0 0 0 .4rem;\n  }\n  .workplace {\n    -ms-grid-columns: 0 (50%)[2] 0;\n        grid-template-columns: 0 repeat(2, 50%) 0;\n  }\n  .workplace > codemirror {\n    margin-top: .2rem;\n  }\n  .workplace > output {\n    margin-top: .2rem;\n    padding: 0 1rem;\n  }\n}\n@media print {\n  header > span,\n  header > .menu,\n  header > .connected-users {\n    display: none !important;\n  }\n  .workplace {\n    background-color: white;\n    -ms-grid-columns: 0 (50%)[2] 0;\n        grid-template-columns: 0 repeat(2, 50%) 0;\n    height: unset;\n    min-height: 100vh;\n  }\n  .workplace > codemirror,\n  .workplace > output {\n    box-shadow: none;\n  }\n}\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "header {\n  --pad: 4rem;\n  background-color: white;\n  border
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header [class.is-loaded]=\"loaded\">\n  <span class=\"ion ion-logo-markdown\"></span>\n  <input [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n  <p title=\"All changes are saved on Firebase\">{{lastModifiedAgo}}</p>\n  <p>\n    <span *ngFor=\"let user of users; trackBy:user?.userId\" [style.background-color]=\"user.color\" [innerHTML]=\"user.alias\" [title]=\"user.name\"></span>\n  </p>\n</header>\n<div>\n  <main\n    ace-editor\n    [mode]=\"'markdown'\"\n    [theme]=\"'eclipse'\"\n    [options]=\"options\"\n    ></main>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
+module.exports = "<header [class.is-loaded]=\"loaded\">\n  <ion-icon name=\"logo-markdown\" class=\"logo\"></ion-icon>\n  <input class=\"title\" [(ngModel)]=\"title\" (click)=\"onInputClicked($event)\" (blur)=\"onInputBlur()\" placeholder=\"Untitled document\">\n  <div class=\"menu\">\n    <app-menu></app-menu>\n    <p title=\"All changes are saved on Firebase\">{{lastModifiedAgo}}</p>\n  </div>\n  <div class=\"connected-users\">\n    <span *ngFor=\"let user of users; trackBy:user?.userId\" [style.background-color]=\"user.color\" [innerHTML]=\"user.alias\" [title]=\"user.name\"></span>\n  </div>\n</header>\n<div class=\"workplace\">\n  <codemirror [config]=\"codemirrorConfig\"></codemirror>\n  <output [innerHTML]=\"resultString\"></output>\n</div>\n"
 
 /***/ }),
 
@@ -56,33 +56,28 @@ module.exports = "<header [class.is-loaded]=\"loaded\">\n  <span class=\"ion ion
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var brace_ext_language_tools_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! brace/ext/language_tools.js */ "./node_modules/brace/ext/language_tools.js");
-/* harmony import */ var brace_ext_language_tools_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(brace_ext_language_tools_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var brace_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! brace/index */ "./node_modules/brace/index.js");
-/* harmony import */ var brace_index__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(brace_index__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var brace_mode_markdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! brace/mode/markdown */ "./node_modules/brace/mode/markdown.js");
-/* harmony import */ var brace_mode_markdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(brace_mode_markdown__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var brace_theme_eclipse__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! brace/theme/eclipse */ "./node_modules/brace/theme/eclipse.js");
-/* harmony import */ var brace_theme_eclipse__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(brace_theme_eclipse__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
-/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/lib/index.js");
-/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! javascript-time-ago */ "./node_modules/javascript-time-ago/index.js");
-/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! javascript-time-ago/locale/en */ "./node_modules/javascript-time-ago/locale/en/index.js");
-/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
-/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! markdown-it-emoji */ "./node_modules/markdown-it-emoji/index.js");
-/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ng2-ace-editor */ "./node_modules/ng2-ace-editor/index.js");
-/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ts-dedent */ "./node_modules/ts-dedent/dist/index.js");
-/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ts_dedent__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! twemoji */ "./node_modules/twemoji/2/twemoji.npm.js");
-/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(twemoji__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../libs/firepad/dist/firepad */ "./src/libs/firepad/dist/firepad.js");
-/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var firebase_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/database */ "./node_modules/firebase/database/dist/index.esm.js");
+/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/lib/index.js");
+/* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var javascript_time_ago__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! javascript-time-ago */ "./node_modules/javascript-time-ago/index.js");
+/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! javascript-time-ago/locale/en */ "./node_modules/javascript-time-ago/locale/en/index.js");
+/* harmony import */ var javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/index.js");
+/* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! markdown-it-emoji */ "./node_modules/markdown-it-emoji/index.js");
+/* harmony import */ var markdown_it_emoji__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var ng2_codemirror__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng2-codemirror */ "./node_modules/ng2-codemirror/lib/index.js");
+/* harmony import */ var ng2_codemirror__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(ng2_codemirror__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ts-dedent */ "./node_modules/ts-dedent/dist/index.js");
+/* harmony import */ var ts_dedent__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(ts_dedent__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! twemoji */ "./node_modules/twemoji/2/twemoji.npm.js");
+/* harmony import */ var twemoji__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(twemoji__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../libs/firepad/dist/firepad */ "./src/libs/firepad/dist/firepad.js");
+/* harmony import */ var _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/menu/menu.component.ts");
 var __makeTemplateObject = (undefined && undefined.__makeTemplateObject) || function (cooked, raw) {
     if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
     return cooked;
@@ -110,11 +105,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
-javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__["default"].locale(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_9___default.a);
+javascript_time_ago__WEBPACK_IMPORTED_MODULE_5__["default"].locale(javascript_time_ago_locale_en__WEBPACK_IMPORTED_MODULE_6___default.a);
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(titleService) {
+        this.titleService = titleService;
         this.colors = {
             Navy: '#001f3f',
             Blue: '#0074D9',
@@ -134,43 +128,63 @@ var AppComponent = /** @class */ (function () {
             Silver: '#DDDDDD',
         };
         this.emojis = {
-            '🐒': 'Monkey',
-            '🐤': 'Chicken',
-            '🦆': 'Duck',
-            '🦉': 'Owl',
-            '🦇': 'Bat',
-            '🦄': 'Unicorn',
-            '🦋': 'Butterfly',
-            '🐙': 'Octopus',
-            '🕷': 'Spider',
-            '🐳': 'Whale',
-            '🐀': 'Rat',
-            '🦎': 'Lizard',
+            'Monkey': '🐒',
+            'Chicken': '🐤',
+            'Duck': '🦆',
+            'Owl': '🦉',
+            'Bat': '🦇',
+            'Unicorn': '🦄',
+            'Butterfly': '🦋',
+            'Octopus': '🐙',
+            'Spider': '🕷',
+            'Whale': '🐳',
+            'Rat': '🐀',
+            'Lizard': '🦎',
+        };
+        this.codemirrorConfig = {
+            mode: {
+                name: 'gfm',
+            },
+            tabSize: 2,
+            autofocus: true,
+            theme: 'default',
+            lineWrapping: true,
         };
         this.loaded = false;
-        this.title = '';
-        this.options = {
-            indentedSoftWrap: true,
-            printMargin: false,
-            wrapBehavioursEnabled: true,
-        };
-        this.md = (new markdown_it__WEBPACK_IMPORTED_MODULE_10__({
+        this._title = '';
+        this.md = (new markdown_it__WEBPACK_IMPORTED_MODULE_7__({
             breaks: true,
             highlight: function (str, lng) {
-                if (!lng || !highlight_js__WEBPACK_IMPORTED_MODULE_7___default.a.getLanguage(lng)) {
+                if (!lng || !highlight_js__WEBPACK_IMPORTED_MODULE_4___default.a.getLanguage(lng)) {
                     return '';
                 }
                 try {
-                    return highlight_js__WEBPACK_IMPORTED_MODULE_7___default.a.highlight(lng, str).value;
+                    return highlight_js__WEBPACK_IMPORTED_MODULE_4___default.a.highlight(lng, str).value;
                 }
                 catch (e) { }
             },
         }));
-        this.md.use(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_11__);
-        var emojiToImage = function (token, idx) { return twemoji__WEBPACK_IMPORTED_MODULE_14__["parse"](token[idx].content); };
+        this.md.use(markdown_it_emoji__WEBPACK_IMPORTED_MODULE_8__);
+        var emojiToImage = function (tokens, idx) { return twemoji__WEBPACK_IMPORTED_MODULE_11__["parse"](tokens[idx].content); };
         this.md.renderer.rules.emoji = emojiToImage;
-        this.timeAgo = new javascript_time_ago__WEBPACK_IMPORTED_MODULE_8__["default"]();
+        var originalLinkRenderer = this.md.renderer.rules.link_open || (function (tokens, idx, options, env, self) {
+            return self.renderToken(tokens, idx, options);
+        });
+        this.md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+            tokens[idx].attrPush(['target', '_blank']);
+            return originalLinkRenderer(tokens, idx, options, env, self);
+        };
+        this.timeAgo = new javascript_time_ago__WEBPACK_IMPORTED_MODULE_5__["default"]();
     }
+    Object.defineProperty(AppComponent.prototype, "title", {
+        get: function () { return this._title; },
+        set: function (newTitle) {
+            this.titleService.setTitle(newTitle + " \u2212 Markdown Editor");
+            this._title = newTitle;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(AppComponent.prototype, "lastModifiedAgo", {
         get: function () {
             return this.lastModified ?
@@ -181,21 +195,17 @@ var AppComponent = /** @class */ (function () {
     });
     AppComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        var defaultText = ts_dedent__WEBPACK_IMPORTED_MODULE_13___default()(templateObject_1 || (templateObject_1 = __makeTemplateObject(["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "], ["# Hello!\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    "])));
-        var editor = this.ace.editor;
-        var session = editor.getSession();
-        session.setUseWrapMode(true);
-        editor.renderer.setShowGutter(false);
-        editor.renderer.setPadding(20);
-        editor.renderer.setScrollMargin(20, 10);
+        var defaultText = ts_dedent__WEBPACK_IMPORTED_MODULE_10___default()(templateObject_1 || (templateObject_1 = __makeTemplateObject(["# New document\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    > Made with <3 from :chile:\n\n    "], ["# New document\n\n    This is an _online_ **Markdown** editor :v:.\n\n    Have some fun. Here you have a [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) ;).\n\n    > Made with <3 from :chile:\n\n    "])));
+        var codemirrorInstance = this.cm.instance;
+        this.menu.cm = codemirrorInstance;
         var config = {
             apiKey: 'AIzaSyBK7k4vLvjRfJ2DOfzouMNAAgj9jwhQc4Y',
             authDomain: 'markdown-editor-8412c.firebaseapp.com',
             databaseURL: 'https://markdown-editor-8412c.firebaseio.com',
         };
-        firebase_app__WEBPACK_IMPORTED_MODULE_5__["initializeApp"](config);
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](config);
         this.ref = this.getRef();
-        this.firepad = _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_15__["fromACE"](this.ref, editor, {
+        this.firepad = _libs_firepad_dist_firepad__WEBPACK_IMPORTED_MODULE_12__["fromCodeMirror"](this.ref, codemirrorInstance, {
             defaultText: defaultText,
         });
         var onSync = function () { return _this.resultString = _this.md.render(_this.firepad.getText()); };
@@ -203,13 +213,13 @@ var AppComponent = /** @class */ (function () {
         this.firepad.on('ready', function () {
             _this.loaded = true;
             onSync();
-            editor.resize(true);
         });
         this.ref.child('metadata').once('value')
             .then(function (snapshot) { return snapshot.val(); })
-            .then(function (_a) {
-            var title = _a.title;
-            return _this.title = title;
+            .then(function (val) {
+            if (val && 'title' in val) {
+                _this.title = val.title;
+            }
         });
         this.ref.child('history')
             .orderByChild('t')
@@ -221,32 +231,28 @@ var AppComponent = /** @class */ (function () {
         this.ref.child('users')
             .on('value', function (snapshot) {
             var users = snapshot.val();
-            var objToNumber = function (obj) { return JSON.stringify(obj)
-                .split('')
-                .reduce(function (acc, c) { return acc + c.charCodeAt(0); }, 0); };
-            var colorList = Object.keys(_this.colors);
+            var colorNameList = Object.keys(_this.colors);
+            var emojiNameList = Object.keys(_this.emojis);
+            var objToNumber = function (obj) { return JSON.stringify(obj).split('')
+                .map(function (c) { return c.charCodeAt(0); })
+                .reduce(function (acc, n) { return acc + n; }, 0); };
             var colorNameFromObject = function (color) {
-                var number = objToNumber(color) % colorList.length;
-                return colorList[number];
+                return colorNameList[objToNumber(color) % colorNameList.length];
             };
-            var emojiList = Object.keys(_this.emojis);
-            var emojiFromColor = function (color, offset) {
+            var emojiNameFromColor = function (color, offset) {
                 if (offset === void 0) { offset = 0; }
-                var number = (objToNumber(color) + offset) % emojiList.length;
-                return emojiList[number];
+                return emojiNameList[(objToNumber(color) + offset) % emojiNameList.length];
             };
-            var imageFromEmoji = function (someEmoji) { return twemoji__WEBPACK_IMPORTED_MODULE_14__["parse"](someEmoji); };
+            var imageFromEmoji = twemoji__WEBPACK_IMPORTED_MODULE_11__["parse"];
             _this.users = Object.entries(users)
                 .map(function (_a, i) {
                 var userId = _a[0];
-                var newColor = colorNameFromObject(userId);
-                var someEmoji = emojiFromColor(newColor, i);
-                return {
-                    userId: userId,
-                    color: _this.colors[newColor],
-                    alias: imageFromEmoji(someEmoji),
-                    name: newColor + ' ' + _this.emojis[someEmoji],
-                };
+                var colorName = colorNameFromObject(userId);
+                var color = _this.colors[colorName];
+                var emojiName = emojiNameFromColor(colorName, i);
+                var alias = imageFromEmoji(_this.emojis[emojiName]);
+                var name = colorName + ' ' + emojiName;
+                return { userId: userId, color: color, alias: alias, name: name };
             });
         });
     };
@@ -256,7 +262,7 @@ var AppComponent = /** @class */ (function () {
         if (this.title) {
             return;
         }
-        var firstLine = this.resultString.split('\n', 1)[0].match(/>(.*)</)[1];
+        var firstLine = this.resultString.split('\n', 1)[0].replace(/>(.*)</, '$1');
         this.title = firstLine || 'Untitled document';
         setTimeout(function () { return target.setSelectionRange(0, _this.title.length); });
     };
@@ -265,7 +271,7 @@ var AppComponent = /** @class */ (function () {
         this.ref.update({ metadata: { title: title } });
     };
     AppComponent.prototype.getRef = function () {
-        var ref = firebase_app__WEBPACK_IMPORTED_MODULE_5__["database"]().ref();
+        var ref = firebase_app__WEBPACK_IMPORTED_MODULE_2__["database"]().ref();
         var hash = window.location.hash.replace(/#/g, '');
         if (hash) {
             ref = ref.child(hash);
@@ -278,16 +284,20 @@ var AppComponent = /** @class */ (function () {
         return ref;
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__["AceEditorDirective"]),
-        __metadata("design:type", ng2_ace_editor__WEBPACK_IMPORTED_MODULE_12__["AceEditorDirective"])
-    ], AppComponent.prototype, "ace", void 0);
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_menu_menu_component__WEBPACK_IMPORTED_MODULE_13__["MenuComponent"]),
+        __metadata("design:type", _menu_menu_component__WEBPACK_IMPORTED_MODULE_13__["MenuComponent"])
+    ], AppComponent.prototype, "menu", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_codemirror__WEBPACK_IMPORTED_MODULE_9__["CodemirrorComponent"]),
+        __metadata("design:type", ng2_codemirror__WEBPACK_IMPORTED_MODULE_9__["CodemirrorComponent"])
+    ], AppComponent.prototype, "cm", void 0);
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Title"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -310,8 +320,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var ng2_ace_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng2-ace-editor */ "./node_modules/ng2-ace-editor/index.js");
+/* harmony import */ var ng2_codemirror__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng2-codemirror */ "./node_modules/ng2-codemirror/lib/index.js");
+/* harmony import */ var ng2_codemirror__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng2_codemirror__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _menu_dropdown_menu_dropdown_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./menu-dropdown/menu-dropdown.component */ "./src/app/menu-dropdown/menu-dropdown.component.ts");
+/* harmony import */ var _menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./menu-item/menu-item.component */ "./src/app/menu-item/menu-item.component.ts");
+/* harmony import */ var _menu_name_menu_name_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./menu-name/menu-name.component */ "./src/app/menu-name/menu-name.component.ts");
+/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/menu/menu.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -323,24 +338,448 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _menu_name_menu_name_component__WEBPACK_IMPORTED_MODULE_7__["MenuNameComponent"],
+                _menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_6__["MenuItemComponent"],
+                _menu_dropdown_menu_dropdown_component__WEBPACK_IMPORTED_MODULE_5__["MenuDropdownComponent"],
+                _menu_menu_component__WEBPACK_IMPORTED_MODULE_8__["MenuComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
-                ng2_ace_editor__WEBPACK_IMPORTED_MODULE_3__["AceEditorModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
+                ng2_codemirror__WEBPACK_IMPORTED_MODULE_3__["CodemirrorModule"],
             ],
+            schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["CUSTOM_ELEMENTS_SCHEMA"]],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/menu-dropdown/menu-dropdown.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/menu-dropdown/menu-dropdown.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  align-items: baseline;\n  display: flex;\n  font-size: 0.8rem;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-dropdown/menu-dropdown.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/menu-dropdown/menu-dropdown.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-content></ng-content>\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-dropdown/menu-dropdown.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/menu-dropdown/menu-dropdown.component.ts ***!
+  \**********************************************************/
+/*! exports provided: MenuDropdownComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuDropdownComponent", function() { return MenuDropdownComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _menu_name_menu_name_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../menu-name/menu-name.component */ "./src/app/menu-name/menu-name.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MenuDropdownComponent = /** @class */ (function () {
+    function MenuDropdownComponent() {
+        this.isOpen = false;
+    }
+    Object.defineProperty(MenuDropdownComponent.prototype, "currentOpen", {
+        get: function () { return this._currentOpen; },
+        set: function (name) {
+            if (this._currentOpen) {
+                this._currentOpen.open = false;
+            }
+            if (name) {
+                name.open = true;
+            }
+            this._currentOpen = name;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MenuDropdownComponent.prototype.clickOutside = function (event) {
+        if (!this.isOpen) {
+            return;
+        }
+        this.isOpen = false;
+        this.currentOpen = null;
+    };
+    MenuDropdownComponent.prototype.ngAfterContentInit = function () {
+        var _this = this;
+        this.names.forEach(function (n) {
+            n.clicked.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function () { return _this.isOpen = !_this.isOpen; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (_a) {
+                var name = _a[0];
+                return _this.isOpen ? name : null;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (name) { return _this.currentOpen = name; })).subscribe();
+            n.hovered.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function (_a) {
+                var name = _a[0];
+                return _this.isOpen && _this.currentOpen !== name;
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["tap"])(function (_a) {
+                var name = _a[0];
+                return _this.currentOpen = name;
+            })).subscribe();
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ContentChildren"])(_menu_name_menu_name_component__WEBPACK_IMPORTED_MODULE_2__["MenuNameComponent"]),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"])
+    ], MenuDropdownComponent.prototype, "names", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:click', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [MouseEvent]),
+        __metadata("design:returntype", void 0)
+    ], MenuDropdownComponent.prototype, "clickOutside", null);
+    MenuDropdownComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-menu-dropdown',
+            template: __webpack_require__(/*! ./menu-dropdown.component.html */ "./src/app/menu-dropdown/menu-dropdown.component.html"),
+            styles: [__webpack_require__(/*! ./menu-dropdown.component.css */ "./src/app/menu-dropdown/menu-dropdown.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MenuDropdownComponent);
+    return MenuDropdownComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/menu-item/menu-item.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/menu-item/menu-item.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  cursor: pointer;\n  min-width: -webkit-max-content;\n  min-width: -moz-max-content;\n  min-width: max-content;\n  padding: .31rem 1rem .44rem 2rem;\n}\n:host:hover {\n  background-color: #eee;\n}\n:host::ng-deep ion-icon:first-child {\n  color: #999;\n  left: 0.4rem;\n  position: absolute;\n  font-size: 1.125rem;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-item/menu-item.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/menu-item/menu-item.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-content></ng-content>\n<ion-icon *ngIf=\"iconName\" [name]=\"iconName\"></ion-icon>\n<ion-icon *ngIf=\"iconSrc\" [src]=\"iconSrc\"></ion-icon>\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-item/menu-item.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/menu-item/menu-item.component.ts ***!
+  \**************************************************/
+/*! exports provided: MenuItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItemComponent", function() { return MenuItemComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MenuItemComponent = /** @class */ (function () {
+    function MenuItemComponent() {
+    }
+    MenuItemComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], MenuItemComponent.prototype, "iconName", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], MenuItemComponent.prototype, "iconSrc", void 0);
+    MenuItemComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-menu-item',
+            template: __webpack_require__(/*! ./menu-item.component.html */ "./src/app/menu-item/menu-item.component.html"),
+            styles: [__webpack_require__(/*! ./menu-item.component.css */ "./src/app/menu-item/menu-item.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MenuItemComponent);
+    return MenuItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/menu-name/menu-name.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/menu-name/menu-name.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ":host {\n  cursor: default;\n  position: relative;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n.menu-name {\n  border: 0.06rem solid transparent;\n  outline: none;\n  padding: .19rem .44rem .31rem;\n  position: relative;\n  z-index: 1;\n}\n.menu-name:hover {\n  background-color: #eee;\n  border-color: #eee;\n}\n.menu-name.control-open {\n  background-color: #fff;\n  border-bottom: none;\n  border-color: rgba(0, 0, 0, .2);\n}\n.menu-items {\n  align-items: stretch;\n  background-color: #fff;\n  border: 0.06rem solid #ccc;\n  box-shadow: 0 2px 4px rgba(0,0,0,0.2);\n  display: none;\n  flex-direction: column;\n  left: 0;\n  min-width: -webkit-max-content;\n  min-width: -moz-max-content;\n  min-width: max-content;\n  padding: .6rem 0;\n  position: absolute;\n  top: 97%;\n}\n.menu-name.control-open ~ .menu-items {\n  display: flex;\n}\n.menu-items > app-menu-item {\n  flex-basis: 4rem;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-name/menu-name.component.html":
+/*!****************************************************!*\
+  !*** ./src/app/menu-name/menu-name.component.html ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div\n  class=\"menu-name\"\n  [class.control-open]=\"open\"\n  (mouseenter)=\"onHoverEnter($event)\"\n  >\n  {{name}}\n</div>\n<div class=\"menu-items\">\n  <ng-content></ng-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/menu-name/menu-name.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/menu-name/menu-name.component.ts ***!
+  \**************************************************/
+/*! exports provided: MenuNameComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuNameComponent", function() { return MenuNameComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MenuNameComponent = /** @class */ (function () {
+    function MenuNameComponent() {
+        this.open = false;
+        this.hovered = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.clicked = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    MenuNameComponent.prototype.onClick = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.clicked.emit([this, event]);
+    };
+    MenuNameComponent.prototype.onHoverEnter = function (event) {
+        this.hovered.emit([this, event]);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], MenuNameComponent.prototype, "name", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], MenuNameComponent.prototype, "open", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], MenuNameComponent.prototype, "hovered", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], MenuNameComponent.prototype, "clicked", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('click', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [MouseEvent]),
+        __metadata("design:returntype", void 0)
+    ], MenuNameComponent.prototype, "onClick", null);
+    MenuNameComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-menu-name',
+            template: __webpack_require__(/*! ./menu-name.component.html */ "./src/app/menu-name/menu-name.component.html"),
+            styles: [__webpack_require__(/*! ./menu-name.component.css */ "./src/app/menu-name/menu-name.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MenuNameComponent);
+    return MenuNameComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/menu/menu.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/menu/menu.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/menu/menu.component.html":
+/*!******************************************!*\
+  !*** ./src/app/menu/menu.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-menu-dropdown>\n  <app-menu-name name=\"File\">\n    <app-menu-item (click)=\"openNewDocument()\">New document</app-menu-item>\n    <app-menu-item (click)=\"print()\" iconName=\"print\">Print</app-menu-item>\n  </app-menu-name>\n  <app-menu-name name=\"Insert\">\n    <app-menu-item (click)=\"insertLink()\" iconSrc=\"assets/link.svg\">Link</app-menu-item>\n    <app-menu-item (click)=\"insertLine()\" iconSrc=\"assets/line.svg\">Line</app-menu-item>\n    <app-menu-item (click)=\"insertImage()\" iconSrc=\"assets/image.svg\">Image</app-menu-item>\n  </app-menu-name>\n  <app-menu-name name=\"Format\">\n    <app-menu-item (click)=\"toggleHeader()\">Headers</app-menu-item>\n    <app-menu-item (click)=\"toggleBold()\" iconSrc=\"assets/bold.svg\">Bold</app-menu-item>\n    <app-menu-item (click)=\"toggleItalic()\" iconSrc=\"assets/italic.svg\">Italics</app-menu-item>\n    <app-menu-item (click)=\"toggleStrikethrough()\" iconSrc=\"assets/strikethrough.svg\">Strikethrough</app-menu-item>\n    <app-menu-item (click)=\"toggleList()\" iconSrc=\"assets/listNumbered.svg\">List</app-menu-item>\n    <app-menu-item (click)=\"toggleCode()\" iconSrc=\"assets/code.svg\">Code</app-menu-item>\n    <app-menu-item (click)=\"toggleQuote()\" iconSrc=\"assets/quote.svg\">Quote</app-menu-item>\n  </app-menu-name>\n  <app-menu-name name=\"Help\">\n    <app-menu-item>About...</app-menu-item>\n  </app-menu-name>\n</app-menu-dropdown>\n"
+
+/***/ }),
+
+/***/ "./src/app/menu/menu.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/menu/menu.component.ts ***!
+  \****************************************/
+/*! exports provided: MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var escape_string_regexp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! escape-string-regexp */ "./node_modules/escape-string-regexp/index.js");
+/* harmony import */ var escape_string_regexp__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(escape_string_regexp__WEBPACK_IMPORTED_MODULE_1__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MenuComponent = /** @class */ (function () {
+    function MenuComponent() {
+        this.global = window;
+    }
+    MenuComponent.prototype.ngOnInit = function () {
+    };
+    MenuComponent.prototype.openNewDocument = function () {
+        var url = this.global.location.href.split('#')[0];
+        this.global.open(url, '_blank');
+    };
+    MenuComponent.prototype.print = function () {
+        this.global.print();
+    };
+    MenuComponent.prototype.insertLink = function () {
+        this.cm.replaceSelection('[link](https://gooogle.com/)');
+    };
+    MenuComponent.prototype.insertLine = function () {
+        this.cm.replaceSelection('\n---\n');
+    };
+    MenuComponent.prototype.insertImage = function () {
+        this.cm.replaceSelection('\n![img description](https://78.media.tumblr.com/avatar_f27f604004a0_128.png)\n');
+    };
+    MenuComponent.prototype.toggleBold = function () {
+        this.genericToggle('**', '**');
+    };
+    MenuComponent.prototype.toggleItalic = function () {
+        this.genericToggle('_', '_');
+    };
+    MenuComponent.prototype.toggleStrikethrough = function () {
+        this.genericToggle('~~', '~~');
+    };
+    MenuComponent.prototype.toggleHeader = function () {
+        var line = this.cm.getCursor().line;
+        var text = this.cm.getLineHandle(line).text;
+        var regex = /^(#{1,6})\s/;
+        if (!regex.test(text)) {
+            return this.genericToggle('# ', '');
+        }
+        var currentNumber = text.match(regex)[1].length;
+        var nextNumber = Math.max(1, (currentNumber + 1) % 7);
+        var prefix = '#'.repeat(nextNumber);
+        this.cm.setSelection({ line: line, ch: 0 }, { line: line, ch: currentNumber });
+        this.cm.replaceSelection(prefix);
+    };
+    MenuComponent.prototype.toggleList = function () {
+        this.genericToggle('1. ', '');
+    };
+    MenuComponent.prototype.toggleCode = function () {
+        this.genericToggle('```typescript\n', '\n```');
+    };
+    MenuComponent.prototype.toggleQuote = function () {
+        this.genericToggle('> ', '');
+    };
+    MenuComponent.prototype.genericToggle = function (before, after) {
+        var original = this.cm.getSelection();
+        if (!original) {
+            var line = this.cm.getCursor().line;
+            original = this.cm.getLineHandle(line).text;
+            this.cm.setSelection({ line: line, ch: 0 }, { line: line, ch: original.length });
+        }
+        var changed = this.formatToggle(original, before, after);
+        this.cm.replaceSelection(changed, 'around');
+    };
+    MenuComponent.prototype.formatToggle = function (str, before, after) {
+        var regBefore = escape_string_regexp__WEBPACK_IMPORTED_MODULE_1__(before);
+        var regAfter = escape_string_regexp__WEBPACK_IMPORTED_MODULE_1__(after);
+        var regex = new RegExp("^(\\s*)(" + regBefore + ")(.*)(" + regAfter + ")(\\s*$)");
+        if (regex.test(str)) {
+            return str.replace(regex, '$1$3$5');
+        }
+        return before + str + after;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], MenuComponent.prototype, "cm", void 0);
+    MenuComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-menu',
+            template: __webpack_require__(/*! ./menu.component.html */ "./src/app/menu/menu.component.html"),
+            styles: [__webpack_require__(/*! ./menu.component.css */ "./src/app/menu/menu.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MenuComponent);
+    return MenuComponent;
 }());
 
 
@@ -370,6 +809,26 @@ var environment = {
  * because it will have performance impact when throw error
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "./src/globals.ts":
+/*!************************!*\
+  !*** ./src/globals.ts ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var codemirror__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! codemirror */ "./node_modules/codemirror/lib/codemirror.js");
+/* harmony import */ var codemirror__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(codemirror__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var codemirror_mode_gfm_gfm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! codemirror/mode/gfm/gfm.js */ "./node_modules/codemirror/mode/gfm/gfm.js");
+/* harmony import */ var codemirror_mode_gfm_gfm_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(codemirror_mode_gfm_gfm_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+window['CodeMirror'] = codemirror__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 
 /***/ }),
@@ -6611,18 +7070,20 @@ return firepad.Firepad; }, this);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./globals */ "./src/globals.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
     .catch(function (err) { return console.log(err); });
 
 
